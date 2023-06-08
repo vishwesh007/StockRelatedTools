@@ -1,0 +1,54 @@
+import java.io.FileWriter;
+
+import java.io.IOException;
+
+import java.io.PrintWriter;
+
+import java.util.regex.Matcher;
+
+import java.util.regex.Pattern;
+
+public class StockSegregator {
+
+    public static void main(String[] args) {
+
+        String input = "<title>Genus Power Infrastructures Ltd Share Price Today - Genus Power Infrastructures Ltd Share Price LIVE on NSE/BSE</title>\n>100<span";
+
+        // Define the regex pattern
+
+        String regexPattern = "<title>(.*?) Share Price Today - .*? Share Price LIVE on NSE/BSE</title>.*?<span";
+
+        // Create a pattern object
+
+        Pattern pattern = Pattern.compile(regexPattern);
+
+        Matcher matcher = pattern.matcher(input);
+
+        // Check if a match is found
+
+        if (matcher.find()) {
+
+            String match = matcher.group(0); // Get the matched string
+
+            // Print the match to a file
+
+            try (PrintWriter writer = new PrintWriter(new FileWriter("output.txt"))) {
+
+                writer.println(match);
+
+            } catch (IOException e) {
+
+                e.printStackTrace();
+
+            }
+
+        } else {
+
+            System.out.println("No match found.");
+
+        }
+
+    }
+
+}
+
