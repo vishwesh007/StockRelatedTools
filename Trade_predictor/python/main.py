@@ -1,4 +1,4 @@
-from kite_trade import *
+from kite_trade import KiteApp
 import datetime
 import time
 
@@ -22,6 +22,7 @@ minute_start_time = datetime.datetime.now()
 minute_ltp_values = []
 minute_average = 0
 opening_price = 0
+all_time_high = 0  # Variable to store the all-time high value for the day
 
 while datetime.datetime.now() < end_time:
     current_time = datetime.datetime.now()
@@ -37,18 +38,23 @@ while datetime.datetime.now() < end_time:
     minute_ltp_values.extend(ltp_values)  # Add the LTP values to the minute list
     minute_average = sum(minute_ltp_values) / len(minute_ltp_values)  # Calculate the average
 
+    # Update the all-time high if the current value is higher
+    if ltp_values[-1] > all_time_high:
+        all_time_high = ltp_values[-1]
+
     # Check for a bullish or bearish alert based on high spike
     current_value = ltp_values[-1]
-    spike_threshold = 0.03 * opening_price  # 3% threshold
+    spike_threshold = 0.01 * opening_price  # 1% threshold
     if current_value > opening_price + spike_threshold:
         print("Bullish Alert!")
     elif current_value < opening_price - spike_threshold:
         print("Bearish Alert!")
 
-    # Print the current LTP values, average for the minute, and opening price
+    # Print the current LTP values, average for the minute, opening price, and all-time high
     print(f"Current LTP Values: {ltp_values}")
     print(f"Minute Average: {minute_average}")
     print(f"Opening Price: {opening_price}")
+    print(f"All-Time High: {all_time_high}")
 
     # Check if a minute has passed
     if current_time >= minute_start_time + datetime.timedelta(minutes=1):
