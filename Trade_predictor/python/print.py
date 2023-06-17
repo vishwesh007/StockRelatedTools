@@ -1,1 +1,0 @@
-print(nse_values.txt)
