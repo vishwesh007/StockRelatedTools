@@ -1,11 +1,14 @@
 from kite_trade import KiteApp
 import datetime
 import time
-file_path="enctoken.txt"
+import entoken
 
-with open(file_path,'r') as file:
-    enctoken=file.readline
-#enctoken = "t1kTwWfFsedTSpb2GXLHG8hPDmqVfaxKr523GXrsYhaTHXTA2fpA2kxOvr6kOGcUr/ogESBUqAF18SH7ZoJkeRUdrZFpcEaVCi4ehBSHVTcXW77wxYPeHg=="
+enctoken = entoken.enctoken
+# file_path="enctoken.txt"
+
+# with open(file_path,'r') as file:
+#     enctoken=file.readline
+# enctoken = "ZaNXyp1wybTmJsgj/LgO61HuwxHQpbp/6xzFrJl3eMD8nePme1uOY8pQRpvTNcxFeXdD4Dp1N6JGPslNA/OaYVKL5SEXlQpift4IRe+otSS0SRYnsIWwPA=="
  
 kite = KiteApp(enctoken=enctoken)
  

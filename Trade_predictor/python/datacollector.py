@@ -4,16 +4,15 @@ import time
 import entoken
 
 
-enctoken = entoken
+enctoken = entoken.enctoken
 kite = KiteApp(enctoken=enctoken)
 
 
-print(kite.margins())
-print(kite.orders())
-print(kite.positions())
+# print(kite.margins())
+# print(kite.orders())
+# print(kite.positions())
 
-
-instrument_token = 9604354
+instrument_token = 470529
 from_datetime = datetime.datetime.now() - datetime.timedelta(days=7)     # From last & days
 to_datetime = datetime.datetime.now()
 interval = "5minute"
