@@ -1,4 +1,4 @@
-from kite_trade import KiteApp
+from kite_trade import *
 import datetime
 import time
 import entoken
@@ -8,18 +8,18 @@ enctoken = entoken.enctoken
 
 # with open(file_path,'r') as file:
 #     enctoken=file.readline
-# enctoken = "ZaNXyp1wybTmJsgj/LgO61HuwxHQpbp/6xzFrJl3eMD8nePme1uOY8pQRpvTNcxFeXdD4Dp1N6JGPslNA/OaYVKL5SEXlQpift4IRe+otSS0SRYnsIWwPA=="
- 
+#enctoken = "Xfivgzafy06/YPzGy1WgVBHE8PS0aEBhGpAqIw6a6Mm88mtFC/zYuTyp8Je/2bGrHD/cWeD17xdEHKpnt/o6oDTDSxUR8PGVaQMTaGn1taZJElcoSPW5jg=="
+
 kite = KiteApp(enctoken=enctoken)
  
-input_file_path = "C:\\Users\\Vishw\\StockRelatedTools\\Trade_predictor\\python\\nse_values.txt"
-output_file_path = "C:\\Users\\Vishw\\StockRelatedTools\\Trade_predictor\\python\\output.txt"
+input_file_path = r"Trade_predictor\python\nse_values.txt"
+output_file_path = r"output_"+str(datetime.date.today())+".txt"
  
 # Read the NSE values from the file
 with open(input_file_path, 'r') as input_file:
     nse_values = input_file.read().splitlines()
  
-end_time = datetime.datetime.now().replace(hour=15, minute=00, second=0, microsecond=0)
+end_time = datetime.datetime.now().replace(hour=15, minute=0, second=0, microsecond=0)
  
 # Open the output file in append mode
 output_file = open(output_file_path, 'a')

@@ -4,9 +4,9 @@ import time
 
 
 
-user_id = "KW86"       # Login Id
-password = "Vis5"      # Login password
-twofa = "369701"         # Login Pin or TOTP
+user_id = "KWS986"       # Login Id
+password = "Vish4050835"      # Login password
+twofa = "404520"         # Login Pin or TOTP
 
 
 enctoken = get_enctoken(user_id, password, twofa)
