@@ -1,7 +1,7 @@
 import requests
 from datetime import date
 
-url = "https://groww.in/v1/api/charting_service/v2/chart/delayed/exchange/NSE/segment/CASH/TATAMOTORS/daily?intervalInMinutes=1&minimal=true"
+url = "https://groww.in/v1/api/charting_service/v2/chart/delayed/exchange/NSE/segment/CASH/HDFCAMC/daily?intervalInMinutes=1&minimal=true"
 #url ="https://groww.in/v1/api/charting_service/v2/chart/delayed/exchange/NSE/segment/CASH/TATAMOTORS/weekly?intervalInMinutes=1&minimal=true"
 # url="https://groww.in/v1/api/charting_service/v2/chart/delayed/exchange/NSE/segment/CASH/TATAMOTORS/monthly?intervalInMinutes=1&minimal=true"
 # Send a GET request to the URL

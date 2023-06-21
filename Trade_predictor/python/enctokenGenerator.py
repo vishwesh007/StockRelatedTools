@@ -6,7 +6,7 @@ import time
 
 user_id = "KWS986"       # Login Id
 password = "Vish4050835"      # Login password
-twofa = "404520"         # Login Pin or TOTP
+twofa = "417052"         # Login Pin or TOTP
 
 
 enctoken = get_enctoken(user_id, password, twofa)

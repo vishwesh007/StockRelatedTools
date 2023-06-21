@@ -19,7 +19,7 @@ output_file_path = r"output_"+str(datetime.date.today())+".txt"
 with open(input_file_path, 'r') as input_file:
     nse_values = input_file.read().splitlines()
  
-end_time = datetime.datetime.now().replace(hour=15, minute=0, second=0, microsecond=0)
+end_time = datetime.datetime.now().replace(hour=15, minute=20, second=0, microsecond=0)
  
 # Open the output file in append mode
 output_file = open(output_file_path, 'a')
