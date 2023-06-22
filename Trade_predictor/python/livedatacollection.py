@@ -12,7 +12,7 @@ enctoken = entoken.enctoken
 
 kite = KiteApp(enctoken=enctoken)
  
-input_file_path = r"Trade_predictor\python\nse_values.txt"
+input_file_path = r"Trade_predictor\python\ind_niftytotalmarket_list.txt"
 output_file_path = r"output_"+str(datetime.date.today())+".txt"
  
 # Read the NSE values from the file
